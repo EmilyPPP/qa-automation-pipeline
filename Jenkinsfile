@@ -54,6 +54,7 @@ pipeline {
           dir('test-automation') {
             sh 'yarn test:setup'
             sh 'yarn test:e2e'
+            sh 'ls -la . && ls -la playwright-report || true'
           }
         }
       }
