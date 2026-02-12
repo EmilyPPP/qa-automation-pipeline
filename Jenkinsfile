@@ -63,8 +63,10 @@ pipeline {
 
   post {
     always {
-      archiveArtifacts artifacts: 'test-automation/test-results/**,test-automation/playwright-report/**,test-automation/allure-results/**',
-                       allowEmptyArchive: true
+      dir('test-automation') {
+        archiveArtifacts artifacts: 'playwright-report/**,test-results/**,allure-results/**',
+                         allowEmptyArchive: true
+      }
     }
   }
 }
