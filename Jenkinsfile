@@ -1,5 +1,10 @@
 pipeline {
   agent any
+
+  tools {
+    nodejs 'node18'
+  }
+  
   options { timestamps(); disableConcurrentBuilds() }
 
   environment {
