@@ -63,10 +63,14 @@ pipeline {
 
   post {
     always {
-      dir('test-automation') {
-        archiveArtifacts artifacts: 'playwright-report/**,test-results/**,allure-results/**',
-                         allowEmptyArchive: true
-      }
+      publishHTML(target: [
+        reportDir: 'test-automation/playwright-report',
+        reportFiles: 'index.html',
+        reportName: 'Playwright test report',
+        keepAll: true,
+        alwaysLinkToLastBuild: true,
+        allowMissing: true
+      ])
     }
   }
 }
