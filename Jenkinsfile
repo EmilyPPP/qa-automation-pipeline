@@ -22,7 +22,7 @@ pipeline {
     stage('Checkout test repo') {
       steps {
         dir('test-automation') {
-          git branch: 'main',
+          git branch: 'feature/add-kurly-test',
               url: 'https://github.com/EmilyPPP/playwright_study.git',
               credentialsId: 'github-pat'
         }
