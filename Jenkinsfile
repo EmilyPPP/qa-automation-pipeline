@@ -34,7 +34,7 @@ pipeline {
         dir('test-automation') {
           sh 'corepack enable || true'
           sh 'yarn install --frozen-lockfile'
-          sh 'npx playwright install --with-deps'
+          sh 'npx playwright install'
         }
       }
     }
