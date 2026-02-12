@@ -24,7 +24,7 @@ pipeline {
         dir('test-automation') {
           git branch: 'main',
               url: 'https://github.com/EmilyPPP/playwright_study.git',
-              credentialsId: '1ed4a803-3b34-444e-a579-12bf26443549'
+              credentialsId: 'github-pat'
         }
       }
     }
